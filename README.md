@@ -1,6 +1,8 @@
 # conversational-RAG-application-with-langchain-and-huggingface
 
-text ```
+---
+
+```text
 
 PDF
  ↓
