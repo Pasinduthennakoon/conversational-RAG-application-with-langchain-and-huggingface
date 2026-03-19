@@ -1,0 +1,10 @@
+torch
+transformers
+numpy
+langchain
+langchain_community
+sentence_transformers
+langchain-huggingface
+pypdf
+langchain-nvidia-ai-endpoints
+faiss-cpu
