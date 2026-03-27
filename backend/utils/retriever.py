@@ -4,7 +4,7 @@ from langchain_community.vectorstores import FAISS
 from .embedding import embedding_model
 
 #PDF Loader
-loader = PyPDFLoader("data/codeprolk.pdf")
+loader = PyPDFLoader("data/football.pdf")
 docs = loader.load()
 
 #Text Splitter
