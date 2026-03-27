@@ -5,7 +5,7 @@ from utils.chat_session_history import convesational_rag_chain
 
 # 1. Initialize FastAPI
 app = FastAPI(
-    title="CodePRO LK RAG API",
+    title="Football RAG API",
     description="API for the Conversational RAG application"
 )
 
