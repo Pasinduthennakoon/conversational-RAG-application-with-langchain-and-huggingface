@@ -8,3 +8,5 @@ langchain-huggingface
 pypdf
 langchain-nvidia-ai-endpoints
 faiss-cpu
+fastapi
+uvicorn
