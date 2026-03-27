@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Python virtual environment and cache
+venv/
+env/
+.env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment variables (Critical for security)
+.env
+
+# RAG/Vector Database local storage
+# Prevents copying your local dev database into the container
+**/chroma_db/
+**/vector_store/
+*.db
+
+# Streamlit specific
+.streamlit/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+README.md
+app.py

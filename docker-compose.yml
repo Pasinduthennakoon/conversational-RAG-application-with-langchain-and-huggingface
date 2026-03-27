@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    container_name: ai_services
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    # This ensures your vector DB and models aren't deleted when the container stops
+    volumes:
+      - ./backend/chroma_db:/app/chroma_db 
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: chatbot_interface
+    ports:
+      - "8501:8501"
+    environment:
+      # Crucial: Use the service name 'backend' instead of 127.0.0.1
+      - API_URL=http://backend:8000/chat
+    depends_on:
+      - backend
