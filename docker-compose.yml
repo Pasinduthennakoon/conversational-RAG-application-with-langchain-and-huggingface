@@ -8,8 +8,13 @@ services:
       - .env
     # This ensures your vector DB and models aren't deleted when the container stops
     volumes:
-      - ./backend/chroma_db:/app/chroma_db 
+      - ./backend/fiasstore:/app/fiastore
     restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   frontend:
     build: ./frontend
@@ -20,4 +25,6 @@ services:
       # Crucial: Use the service name 'backend' instead of 127.0.0.1
       - API_URL=http://backend:8000/chat
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    restart: always- backend

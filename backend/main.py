@@ -42,7 +42,3 @@ async def chat_endpoint(request: ChatRequest):
 @app.get("/")
 async def root():
     return {"message": "API is online. Visit /docs for documentation."}
-
-if __name__ == "__main__":
-    # Runs the server on http://127.0.0.1:8000
-    uvicorn.run(app, host="127.0.0.1", port=8000)

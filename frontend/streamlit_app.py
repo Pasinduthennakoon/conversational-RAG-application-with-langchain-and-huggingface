@@ -1,10 +1,13 @@
+import os
 import streamlit as st
 import requests
 
+API_URL = os.getenv("API_URL", "http://localhost:8000/chat")
+
 # 1. Page Configuration
-st.set_page_config(page_title="CodePRO LK ChatBot", page_icon="🧠")
-st.title("🧠 CodePRO LK AI Assistant")
-st.markdown("Ask anything about CodePRO LK and technology education.")
+st.set_page_config(page_title="Football ChatBot", page_icon="🧠")
+st.title("🧠 Football RAG Assistant")
+st.markdown("Ask anything about football and sports.")
 
 # 2. Initialize Chat History in Session State
 if "messages" not in st.session_state:
@@ -35,7 +38,7 @@ if prompt := st.chat_input("What is CodePRO LK?"):
         with st.spinner("Thinking..."):
             try:
                 # Replace with your actual FastAPI URL
-                api_url = "http://localhost:8000/chat"
+                api_url = API_URL
                 payload = {
                     "input": prompt,
                     "session_id": session_id
